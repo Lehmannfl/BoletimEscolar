@@ -1,0 +1,30 @@
+.btn{
+    font-family: Arial, Verdana, Tahoma, Sans-Serif;
+    font-size: 20px;
+    text-transform: none;
+    font-weight: 700;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: inline-block;
+}
+.btn{
+    background: green;
+    color: #ffffff;
+    box-shadow: 0 5px 0 #006000;
+}
+.btn-green{
+    background: green;
+    color: #ffffff;
+    box-shadow: 0 5px 0 #006000;
+}
+.btn-green:hover{
+    background: #006000;
+    color: #ffffff;
+    box-shadow: 0 5px 0 #003f00;
+}
+.btn-green:active{
+    position: relative;
+    top: 5px;
+    box-shadow: none;
+}
