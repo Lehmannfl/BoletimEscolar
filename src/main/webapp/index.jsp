@@ -145,4 +145,29 @@
 </table>
 <% } %>
 
+<footer class="footer">
+    <div class= "footer__container">
+        <section>
+            <h2 class="footer__title">Sobre</h2>
+            <p class="footer__about-text">
+                Site criado para acesso ao BOLETIM ESCOLAR On-Line, por alunos, pais e ou responsáveis. Aos alunos, procurem os dados acima com seu professor ou Secretaria da Escola. Aos Diretores, caso queriam disponibilizar o Boletim Escolar aos seus alunos, favor fazer contato, conforme dados abaixo.
+
+            </p>
+        </section>
+        <address>
+            <h2 class="footer__title">Contato</h2>
+            <li><i class="fa-solid fa-envelope"></i>Flávio Lehmann</li>
+            <li><i class="fa-solid fa-envelope"></i>E-mail: flavio696@hotmail.com</li>
+            <li><i class="fa-solid fa-phone"></i>(33) 99940-2121 (vivo)</li>
+            <li><i class="fa-brands fa-whatsapp"></i>(27) 98809-1558 (WhatsApp)</li>
+        </address>
+    </div>
+
+    <section class="footer__copyright">
+        &copy; Todos os direitos reservados!
+    </section>
+
+</footer>
+
+
 </html>
