@@ -5,6 +5,7 @@
 <html>
 
 <link rel="stylesheet" href="Boletim_war/custom.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 <head>
     <style>
         thead{color: #F0FFF0
@@ -45,6 +46,12 @@
             background-color: #E3E3E3;
             color: #4C4C4C;
         }
+        legend{
+            font-size: 20px;
+            padding: 5px;
+            color: #720d0d;
+        }
+
 
 
 
@@ -57,6 +64,20 @@
 <h1>BOLETIM ESCOLAR</h1>
 
 <form action="index.jsp" method="post">
+    <fieldset>
+        <legend  > Escolha o Bimestre</legend>
+        <select name="opcao" >
+            <option value="1"> 1º Bimestre</option>
+            <option value="2"> 2º Bimestre</option>
+            <option value="3"> 3º Bimestre</option>
+            <option value="4"> 4º Bimestre</option>
+        </select>
+
+
+    </fieldset>
+
+
+
     <h3 >Informe o código da Escola seguido do nome da turma:</h3>
     <h6>Exemplo: Código da sua Escola: 44008. Nome da sua turma:1ºEMREG1. Digite abaixo: 440081EMREG1</h6>
     <h6>OBSERVAÇÃO: As letras da sua turma precisam ser digitadas em Letras "MAIÚSCULAS"</h6>
@@ -76,10 +97,35 @@
     <p></p>
     <input type="submit" class="btn btn-green" value="Consultar Boletim">
 
+
+
+
 </form>
 </body>
+
+<%
+    String fileName = "";
+    String opcao = request.getParameter("opcao");
+    if (opcao != null) {
+        switch (Integer.parseInt(opcao)) {
+            case 1:
+                fileName = ("C:/Users/Administrador/IdeaProjects/Boletim/src/main/java/Boletinho/Dados.txt");
+                break;
+            case 2:
+                fileName = "C:/Users/Administrador/IdeaProjects/Boletim/src/main/java/Boletinho/Dados1.txt";
+                break;
+            case 3:
+                fileName = "C:/Users/Administrador/IdeaProjects/Boletim/src/main/java/Boletinho/Dados2.txt";
+                break;
+            default:
+                fileName = ""; // Valor padrão, se nenhuma opção for selecionada
+                break;
+        }
+    }
+%>
+
 <% DataProcessor dataProcessor = new DataProcessor();
-    dataProcessor.processFile("C:/Users/Administrador/IdeaProjects/Boletim/src/main/java/Boletinho/Dados.txt");%>
+    dataProcessor.processFile(fileName);%>
 
 <%-- Processamento dos dados e exibição da tabela formatada --%>
 <%-- Verifica se o formulário foi submetido --%>
@@ -89,7 +135,6 @@
 <%-- Substitua 'separador' pelo caractere que separa os valores no seu arquivo 'dados.txt' --%>
 <%-- Por exemplo, se os valores estiverem separados por ponto e vírgula (;), use ';' --%>
 <%-- Você pode adaptar esta lógica de acordo com a estrutura dos dados no seu arquivo --%>
-
 
 <% String idToQuery1 = request.getParameter("idToQuery1"); %>
 <% String idToQuery2 = request.getParameter("idToQuery2"); %>
@@ -148,7 +193,7 @@
 <footer class="footer">
     <div class= "footer__container">
         <section>
-            <h2 class="footer__title">Sobre</h2>
+            <h2 class="footer__title">Sobre:</h2>
             <p class="footer__about-text">
                 Site criado para acesso ao BOLETIM ESCOLAR On-Line, por alunos, pais e ou responsáveis. Aos alunos, procurem os dados acima com seu professor ou Secretaria da Escola. Aos Diretores, caso queriam disponibilizar o Boletim Escolar aos seus alunos, favor fazer contato, conforme dados abaixo.
 
@@ -156,16 +201,15 @@
         </section>
         <address>
             <h2 class="footer__title">Contato</h2>
-            <li><i class="fa-solid fa-envelope"></i>Flávio Lehmann</li>
-            <li><i class="fa-solid fa-envelope"></i>E-mail: flavio696@hotmail.com</li>
+            <li><i class="fa-brands fa-connectdevelop" style="color: #068e85;"></i>Flávio Lehmann</li>
+            <li><i class="fa-solid fa-envelope"></i> flavio.lehmann@educacao.mg.gov.br</li>
             <li><i class="fa-solid fa-phone"></i>(33) 99940-2121 (vivo)</li>
-            <li><i class="fa-brands fa-whatsapp"></i>(27) 98809-1558 (WhatsApp)</li>
+            <li><i class="fa-brands fa-whatsapp" style="color: #056107"></i>(27) 98809-1558 </li>
+            <li><i class="fa-regular fa-copyright" style="color: #0b3275;"></i>Todos os direitos reservados!</li>
         </address>
     </div>
 
-    <section class="footer__copyright">
-        &copy; Todos os direitos reservados!
-    </section>
+
 
 </footer>
 
